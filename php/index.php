@@ -16,12 +16,12 @@ function printMessage($name) {
 		<title>Visual Studio Code Remote :: PHP</title>
 	</head>
 	<body>
-		<?php 
-		
-		printMessage('Welcome to my remote php container!');
-			
-		phpinfo(); 
-			
+		<?php
+
+		printMessage('Welcome to my local php/postgres instance!');
+
+		phpinfo();
+
 		?>
 	</body>
 </html>
