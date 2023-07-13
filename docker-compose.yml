@@ -12,6 +12,7 @@ services:
 
   db:
     image: postgres
+    restart: always
     ports:
       - 5432:5432
     environment:
@@ -20,3 +21,15 @@ services:
       POSTGRES_DB: db
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - '8020:80'
+    links:
+      - db
